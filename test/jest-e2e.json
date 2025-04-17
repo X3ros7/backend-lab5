@@ -1,0 +1,19 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@lab/config/(.*)": "<rootDir>/../libs/config/src/$1",
+    "@lab/config": "<rootDir>/../libs/config/src",
+    "@lab/seeders/(.*)": "<rootDir>/../libs/seeders/src/$1",
+    "@lab/seeders": "<rootDir>/../libs/seeders/src"
+  }
+}
