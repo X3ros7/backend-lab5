@@ -37,6 +37,7 @@ async function bootstrap() {
       persistAuthorization: true,
       initOAuth: {
         clientId: keycloakConfig.clientId,
+        clientSecret: keycloakConfig.secret,
         usePkceWithAuthorizationCodeGrant: true,
       },
     },
