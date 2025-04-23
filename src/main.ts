@@ -27,16 +27,21 @@ async function bootstrap() {
         },
       },
     })
+    .addSecurityRequirements('oauth2')
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('api', app, document, {
     swaggerOptions: {
       oauth2RedirectUrl: 'http://localhost:3000/api/oauth2-redirect.html',
+      persistAuthorization: true,
       initOAuth: {
         clientId: keycloakConfig.clientId,
+        usePkceWithAuthorizationCodeGrant: true,
       },
     },
+    explorer: true,
+    customSiteTitle: 'Products API',
   });
 
   await app.listen(config.port);
